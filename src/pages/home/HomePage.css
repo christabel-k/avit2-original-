@@ -1,0 +1,617 @@
+/* =========================
+   HOME PAGE
+========================= */
+
+*{
+  margin: 0;
+}
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f5f1e8;
+  color: #202020;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(780px, 85vh);
+  min-height: 520px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.hero-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px 7%;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay to keep text readable */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.67) 0%,
+    rgba(0, 0, 0, 0.38) 48%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
+  color: #fff;
+}
+
+.hero-label {
+  margin: 0 0 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #e8d5b5;
+}
+
+.hero-content h1 {
+  max-width: 650px;
+  margin: 0 0 22px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(44px, 6vw, 82px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.hero-description {
+  max-width: 480px;
+  margin: 0 0 32px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 27px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: #fff;
+  color: #202020;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.hero-btn:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* =========================
+   HERO ARROWS
+========================= */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+.hero-prev {
+  left: 38px;
+}
+
+.hero-next {
+  right: 38px;
+}
+
+/* =========================
+   HERO DOTS
+========================= */
+
+.hero-dots {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateX(-50%);
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.hero-dot.active {
+  width: 27px;
+  background: #fff;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.avit-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 25px 75px;
+  text-align: center;
+}
+
+.home-eyebrow {
+  margin: 0 0 14px;
+  color: #98764b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.avit-text h2 {
+  max-width: 800px;
+  margin: 0;
+  color: #202020;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.intro-description {
+  max-width: 550px;
+  margin: 18px 0 0;
+  color: #777064;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   PRODUCT SECTIONS
+========================= */
+
+.home-products {
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.first-rw {
+  width: 100%;
+  margin: 0 0 65px;
+  padding: 0 5%;
+}
+
+.product-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.product-heading h2 {
+  margin: 0;
+  color: #202020;
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.product-heading > a {
+  flex-shrink: 0;
+  color: #98764b;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product-heading > a:hover {
+  color: #202020;
+}
+
+/* =========================
+   PRODUCT ROW
+========================= */
+
+.image-row {
+  display: flex;
+  width: 100%;
+  gap: 22px;
+  padding: 5px 2px 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #c9bda9 transparent;
+}
+
+.image-row::-webkit-scrollbar {
+  height: 5px;
+}
+
+.image-row::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #c9bda9;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  flex: 0 0 230px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e8e1d5;
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* Product image */
+
+.product-image {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #eeeae3;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+/* Product details */
+
+.discript {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-info {
+  padding: 15px 15px 10px;
+}
+
+.product-info h3 {
+  display: -webkit-box;
+  min-height: 40px;
+  margin: 0 0 9px;
+  overflow: hidden;
+  color: #292929;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-info p {
+  margin: 0;
+  color: #98764b;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Add to cart */
+
+.add-cart button {
+  width: calc(100% - 30px);
+  min-height: 40px;
+  margin: auto 15px 15px;
+  border: 1px solid #202020;
+  border-radius: 4px;
+  background: #202020;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.add-cart:hover {
+  border-color: #98764b;
+  background: #98764b;
+}
+
+/* Loading and error messages */
+
+.product-message {
+  padding: 20px 0;
+  color: #777064;
+  font-size: 14px;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 75vh;
+    min-height: 500px;
+    padding: 12px;
+  }
+
+  .hero-slide {
+    padding: 35px 6%;
+    border-radius: 14px;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 520px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 7vw, 58px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-prev {
+    left: 22px;
+  }
+
+  .hero-next {
+    right: 22px;
+  }
+
+  .avit-text {
+    padding: 75px 25px 60px;
+  }
+
+  .first-rw {
+    padding: 0 25px;
+    margin-bottom: 50px;
+  }
+
+  .product-heading h2 {
+    font-size: 24px;
+  }
+
+  .image-row {
+    gap: 16px;
+  }
+
+  .product-card {
+    flex-basis: 195px;
+  }
+
+  .product-image {
+    height: 225px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+    min-height: 440px;
+    padding: 8px;
+  }
+
+  .hero-slide {
+    padding: 25px 22px;
+    border-radius: 12px;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.25)
+    );
+  }
+
+  .hero-label {
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .hero-content h1 {
+    max-width: 340px;
+    margin-bottom: 15px;
+    font-size: clamp(35px, 10vw, 46px);
+    letter-spacing: -0.8px;
+  }
+
+  .hero-description {
+    max-width: 290px;
+    margin-bottom: 23px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .hero-btn {
+    min-height: 43px;
+    padding: 0 19px;
+    font-size: 12px;
+  }
+
+  .hero-arrow {
+    top: auto;
+    bottom: 20px;
+    width: 35px;
+    height: 35px;
+    transform: none;
+    font-size: 13px;
+  }
+
+  .hero-prev {
+    left: 18px;
+  }
+
+  .hero-next {
+    right: 18px;
+  }
+
+  .hero-dots {
+    bottom: 34px;
+    gap: 7px;
+  }
+
+  .hero-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hero-dot.active {
+    width: 20px;
+  }
+
+  .avit-text {
+    padding: 65px 20px 50px;
+  }
+
+  .home-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .avit-text h2 {
+    font-size: 30px;
+  }
+
+  .intro-description {
+    font-size: 13px;
+  }
+
+  .first-rw {
+    padding: 0 16px;
+    margin-bottom: 42px;
+  }
+
+  .product-heading {
+    margin-bottom: 16px;
+  }
+
+  .product-heading h2 {
+    font-size: 21px;
+  }
+
+  .product-heading > a {
+    font-size: 11px;
+  }
+
+  .image-row {
+    gap: 13px;
+    padding-bottom: 13px;
+  }
+
+  .product-card {
+    flex-basis: 165px;
+    border-radius: 8px;
+  }
+
+  .product-image {
+    height: 190px;
+  }
+
+  .product-info {
+    padding: 12px 11px 8px;
+  }
+
+  .product-info h3 {
+    min-height: 38px;
+    font-size: 12px;
+  }
+
+  .product-info p {
+    font-size: 15px;
+  }
+
+  .add-cart {
+    width: calc(100% - 22px);
+    min-height: 36px;
+    margin: auto 11px 11px;
+    font-size: 11px;
+  }
+}

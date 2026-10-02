@@ -1,0 +1,286 @@
+/* =========================
+   FIND MY FIT PAGE
+========================= */
+*{
+  margin: 0;
+}
+
+.fit-selection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 25px;
+  background: #f5f1e8;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.fit-selection-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* PAGE HEADER */
+
+.fit-selection .fit-header {
+  margin-bottom: 45px;
+}
+
+.fit-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #98764b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.fit-selection .fit-header h1 {
+  margin: 0;
+  color: #202020;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.fit-intro {
+  max-width: 520px;
+  margin: 22px 0 0;
+  color: #777064;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* GENDER SELECTION */
+
+.gender-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* GENDER CARD */
+
+.gender-card {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid #e8e1d5;
+  border-radius: 10px;
+  background: #202020;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.gender-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9bda9;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* CARD IMAGE */
+
+.gender-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease;
+}
+
+.gender-card:hover .gender-image {
+  transform: scale(1.04);
+}
+
+.men-image,
+.women-image {
+  background-position: center 35%;
+}
+
+/* CARD CONTENT */
+
+.gender-info {
+  position: relative;
+  z-index: 2;
+  padding: 25px 28px 28px;
+}
+
+.gender-info > span {
+  color: #98764b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.gender-info h2 {
+  margin: 9px 0 10px;
+  color: #fff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.gender-info p {
+  max-width: 330px;
+  margin: 0;
+  color: #777064;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* CONTINUE LINK */
+
+.continue-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 17px;
+  border-top: 1px solid #e8e1d5;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.continue-link span {
+  display: inline-block;
+  color: #98764b;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.gender-card:hover .continue-link span {
+  transform: translateX(7px);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.gender-card:focus-visible {
+  outline: 2px solid #98764b;
+  outline-offset: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .fit-selection {
+    padding: 65px 25px;
+  }
+
+  .gender-selection {
+    gap: 18px;
+  }
+
+  .gender-card {
+    min-height: 450px;
+  }
+
+  .gender-image {
+    height: 230px;
+  }
+
+  .gender-info {
+    padding: 22px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .fit-selection {
+    min-height: 100vh;
+    padding: 55px 18px;
+    align-items: flex-start;
+  }
+
+  .fit-selection .fit-header {
+    margin-bottom: 32px;
+  }
+
+  .fit-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .fit-selection .fit-header h1 {
+    font-size: clamp(35px, 9vw, 48px);
+  }
+
+  .fit-intro {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .gender-selection {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gender-card {
+    min-height: auto;
+    border-radius: 10px;
+  }
+
+  .gender-image {
+    height: 230px;
+  }
+
+  .gender-info {
+    padding: 22px;
+  }
+
+  .gender-info h2 {
+    font-size: 30px;
+  }
+
+  .gender-info p {
+    font-size: 13px;
+  }
+
+  .continue-link {
+    margin-top: 20px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .fit-selection {
+    padding: 40px 14px;
+  }
+
+  .gender-image {
+    height: 200px;
+  }
+
+  .gender-info {
+    padding: 18px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .gender-card,
+  .gender-image,
+  .continue-link span {
+    transition: none;
+  }
+
+  .gender-card:hover,
+  .gender-card:hover .gender-image {
+    transform: none;
+  }
+}
