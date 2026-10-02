@@ -1,3 +1,4 @@
+import { PATHS } from "../../router/paths";
 import "./FindFitPage.css";
 
 const fitOptions = [
@@ -6,7 +7,7 @@ const fitOptions = [
     title: "Men",
     description: "Find your perfect shirt and trouser size.",
     image: "/images/men-fit.png",
-    link: "/mens-fit",
+    link: `${PATHS.MENS_FIT}`,
     imageClass: "men-image",
   },
   {
@@ -15,7 +16,7 @@ const fitOptions = [
     description:
       "Find your perfect clothing size using your measurements.",
     image: "/images/women-fit.png",
-    link: "/womens-fit",
+    link: `${PATHS.WOMENS_FIT}`,
     imageClass: "women-image",
   },
 ];
