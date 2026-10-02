@@ -1,8 +1,8 @@
 export const PATHS = {
   HOME: "/",
   FIND_FIT: "/find-fit",
-  MENS_FIT: "/find-fit/MensFitPage",
-  WOMENS_FIT: "/find-fit/WomeansFitPage",
+  MENS_FIT: "/menFit",
+  WOMENS_FIT: "/womenFit",
   CART: "/cart",
   DESCRIPTION: "/description/:id",
   PAYMENT: "/payment",

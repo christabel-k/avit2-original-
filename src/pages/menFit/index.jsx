@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./FitPage.css";
- import {
+import "../../pages/findFit/fitPage.css";
+import {
   convertHeightToCm,
   validateMeasurements,
   getSizeFromAI,
@@ -11,13 +11,12 @@ import "./FitPage.css";
 const initialForm = {
   feet: "",
   inches: "",
-  bust: "",
+  chest: "",
   waist: "",
-  hip: "",
   fit: "",
 };
 
-const WomensFitPage =()=> {
+ const MensFitPage =()=> {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [result, setResult] = useState(null);
@@ -44,9 +43,8 @@ const WomensFitPage =()=> {
     const validationErrors = validateMeasurements(form, [
       { name: "feet", label: "Height (feet)", min: 3, max: 8 },
       { name: "inches", label: "Height (inches)", min: 0, max: 11 },
-      { name: "bust", label: "Bust", min: 20, max: 70 },
+      { name: "chest", label: "Chest", min: 20, max: 70 },
       { name: "waist", label: "Waist", min: 20, max: 70 },
-      { name: "hip", label: "Hip", min: 20, max: 80 },
     ]);
 
     if (Object.keys(validationErrors).length > 0) {
@@ -55,11 +53,10 @@ const WomensFitPage =()=> {
     }
 
     const measurements = {
-      gender: "Female",
+      gender: "Male",
       heightCm: convertHeightToCm(form.feet, form.inches),
-      bustCm: Number(form.bust) * 2.54,
+      chestCm: Number(form.chest) * 2.54,
       waistCm: Number(form.waist) * 2.54,
-      hipCm: Number(form.hip) * 2.54,
       fit: form.fit,
     };
 
@@ -88,11 +85,11 @@ const WomensFitPage =()=> {
         </Link>
 
         <header className="fit-header">
-          <span>AVIT WOMEN'S FIT</span>
+          <span>AVIT MEN'S FIT</span>
           <h1>Find Your Fit</h1>
           <p>
-            Share a few measurements to get a clothing-size
-            recommendation based on your preferred fit.
+            Enter a few measurements to get a clothing-size
+            recommendation tailored to your preferred fit.
           </p>
         </header>
 
@@ -137,32 +134,32 @@ const WomensFitPage =()=> {
             )}
           </div>
 
-          <div className={`form-group ${errors.bust ? "has-error" : ""}`}>
-            <label htmlFor="women-bust">
-              Bust <span>Inches</span>
+          <div className={`form-group ${errors.chest ? "has-error" : ""}`}>
+            <label htmlFor="men-chest">
+              Chest <span>Inches</span>
             </label>
             <input
-              id="women-bust"
+              id="men-chest"
               type="number"
-              name="bust"
-              placeholder="Enter bust measurement"
+              name="chest"
+              placeholder="Enter chest measurement"
               min="20"
               max="70"
               step="0.5"
-              value={form.bust}
+              value={form.chest}
               onChange={handleChange}
             />
-            {errors.bust && (
-              <small className="error-message">{errors.bust}</small>
+            {errors.chest && (
+              <small className="error-message">{errors.chest}</small>
             )}
           </div>
 
           <div className={`form-group ${errors.waist ? "has-error" : ""}`}>
-            <label htmlFor="women-waist">
+            <label htmlFor="men-waist">
               Waist <span>Inches</span>
             </label>
             <input
-              id="women-waist"
+              id="men-waist"
               type="number"
               name="waist"
               placeholder="Enter waist measurement"
@@ -177,32 +174,12 @@ const WomensFitPage =()=> {
             )}
           </div>
 
-          <div className={`form-group ${errors.hip ? "has-error" : ""}`}>
-            <label htmlFor="women-hip">
-              Hip <span>Inches</span>
-            </label>
-            <input
-              id="women-hip"
-              type="number"
-              name="hip"
-              placeholder="Enter hip measurement"
-              min="20"
-              max="80"
-              step="0.5"
-              value={form.hip}
-              onChange={handleChange}
-            />
-            {errors.hip && (
-              <small className="error-message">{errors.hip}</small>
-            )}
-          </div>
-
           <div className={`form-group ${errors.fit ? "has-error" : ""}`}>
-            <label htmlFor="women-fit">
+            <label htmlFor="men-fit">
               Preferred Fit <span>Required</span>
             </label>
             <select
-              id="women-fit"
+              id="men-fit"
               name="fit"
               value={form.fit}
               onChange={handleChange}
@@ -263,4 +240,4 @@ const WomensFitPage =()=> {
   );
 }
 
-export default WomensFitPage
+export default MensFitPage;

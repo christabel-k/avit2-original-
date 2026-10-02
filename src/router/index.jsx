@@ -4,13 +4,13 @@ import { PATHS } from "./paths";
 import AppLayout from "../layouts/AppLayout";
 import HomePage from "../pages/home";
 import FindFitPage from "../pages/findFit";
-import WomensFitPage from "../pages/findFit/WomensFitPage";
+import WomensFitPage from "../pages/womenFit";
 import CartPage from "../pages/cart";
 import DescriptionPage from "../pages/description";
 import PaymentPage from "../pages/payment";
 import SearchPage from "../pages/search";
 import Products from "../pages/sex/product";
-import MensFitPage  from "../pages/findFit/MensFitPage"
+import MensFitPage from "../pages/menFit";
 
 
 
