@@ -10,7 +10,7 @@ import DescriptionPage from "../pages/description";
 import PaymentPage from "../pages/payment";
 import SearchPage from "../pages/search";
 import Products from "../pages/sex/product";
-import MensFitPage  from "../pages/findFit/MensFitPage"
+// import MensFitPage  from "../pages/findFit/MensFitPage"
 
 
 
@@ -27,10 +27,10 @@ export const router = createBrowserRouter([
         path: PATHS.FIND_FIT,
         element: <FindFitPage />,
       },
-      {
-        path: PATHS.MENS_FIT,
-        element: <MensFitPage />,
-      },
+      // {
+      //   path: PATHS.MENS_FIT,
+      //   element: <MensFitPage />,
+      // },
       {
         path: PATHS.WOMENS_FIT,
         element: <WomensFitPage />,
