@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+}
+
+.shop-section {
+  background: #f5f1e8;
+  color: #202020;
+  padding: 60px 7%;
+  font-family: "DM Sans", sans-serif;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.shop-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.shop-header p,
+.products-message {
+  color: #777064;
+  font-size: 14px;
+}
+
+.products-message {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.category-btn {
+  padding: 10px 22px;
+  background: transparent;
+  border: 1px solid #e8e1d5;
+  border-radius: 4px;
+  color: #202020;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background: #202020;
+  border-color: #202020;
+  color: #fff;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #e8e1d5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background: #eeeae3;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.product-price {
+  color: #98764b;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.add-cart {
+  width: 100%;
+  min-height: 40px;
+  background: #202020;
+  color: #fff;
+  border: 1px solid #202020;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-cart:hover {
+  background: #98764b;
+  border-color: #98764b;
+}
+
+@media (max-width: 750px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .product-card img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 450px) {
+  .shop-section {
+    padding: 40px 5%;
+  }
+
+  .products-grid {
+    gap: 10px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-info h3 {
+    font-size: 13px;
+  }
+}
