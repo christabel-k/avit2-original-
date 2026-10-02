@@ -16,7 +16,7 @@ const initialForm = {
   fit: "",
 };
 
-export default function MensFitPage() {
+ const MensFitPage =()=> {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [result, setResult] = useState(null);
@@ -239,3 +239,5 @@ export default function MensFitPage() {
     </main>
   );
 }
+
+export default MensFitPage;

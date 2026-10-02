@@ -17,7 +17,7 @@ const initialForm = {
   fit: "",
 };
 
-export default function WomensFitPage() {
+const WomensFitPage =()=> {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [result, setResult] = useState(null);
@@ -262,3 +262,5 @@ export default function WomensFitPage() {
     </main>
   );
 }
+
+export default WomensFitPage
