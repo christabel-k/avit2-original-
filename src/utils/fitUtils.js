@@ -43,7 +43,7 @@ Use common clothing sizes such as XS, S, M, L, XL, or XXL.
 Treat the result as an estimate because clothing sizes vary by brand.
 `;
 
-  const response = await fetch( "http://localhost:63557/api/gemini", {
+  const response = await fetch( "https://avit-server.netlify.app/api/gemini", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
